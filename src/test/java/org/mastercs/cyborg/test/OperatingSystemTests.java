@@ -4,6 +4,11 @@ import lombok.var;
 import org.junit.jupiter.api.Test;
 import oshi.SystemInfo;
 import oshi.software.os.OSFileStore;
+import oshi.software.os.OperatingSystem;
+
+import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 
 public class OperatingSystemTests {
 
@@ -25,5 +30,14 @@ public class OperatingSystemTests {
 
         // 打印所有文件存储的可用空间，单位为GB
         System.out.println("Usable disk space: " + usableSpace / 1024 / 1024 / 1024 + " GB");
+    }
+
+    @Test
+    void bootTime() {
+        OperatingSystem operatingSystem = new SystemInfo().getOperatingSystem();
+        long systemBootTime = operatingSystem.getSystemBootTime();
+        LocalDateTime boot = LocalDateTime.ofInstant(Instant.ofEpochSecond(systemBootTime), ZoneId.systemDefault());
+        System.out.println(boot);
+        System.out.println(boot.toLocalDate());
     }
 }
