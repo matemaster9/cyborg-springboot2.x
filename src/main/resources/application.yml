@@ -1,0 +1,3 @@
+spring:
+  application:
+    name: Cyborg-SpringBoot2.x
