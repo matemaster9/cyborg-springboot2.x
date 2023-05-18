@@ -46,4 +46,67 @@ public class OSHITests {
             System.out.println("IPv4 address: " + Arrays.toString(net.getIPv4addr())); // assuming there's at least one IPv4 address
         }
     }
+
+    @Test
+    void display() {
+        // 创建一个SystemInfo对象
+        SystemInfo si = new SystemInfo();
+
+        // 获取HardwareAbstractionLayer对象
+        HardwareAbstractionLayer hal = si.getHardware();
+
+        List<Display> displays = hal.getDisplays();
+        for (Display display : displays) {
+            System.out.println(display);
+        }
+    }
+
+    @Test
+    void cards() {
+        SystemInfo si = new SystemInfo();
+
+        HardwareAbstractionLayer hal = si.getHardware();
+
+        hal.getSoundCards().forEach(System.out::println);
+
+        hal.getGraphicsCards().forEach(System.out::println);
+
+    }
+
+
+    @Test
+    void memory() {
+        // 创建SystemInfo对象
+        SystemInfo si = new SystemInfo();
+
+        // 从SystemInfo对象中获取硬件抽象层对象
+        HardwareAbstractionLayer hal = si.getHardware();
+
+        // 从硬件抽象层对象中获取全局内存对象
+        GlobalMemory memory = hal.getMemory();
+
+        // 打印可用内存，单位为MB
+        System.out.println("Available memory: " + memory.getAvailable() / 1024 / 1024 + " MB");
+
+        // 打印总内存，单位为MB
+        System.out.println("Total memory: " + memory.getTotal() / 1024 / 1024 + " MB");
+
+        // 打印虚拟内存，单位为MB
+        System.out.println("Virtual memory: " + memory.getVirtualMemory().getVirtualMax() / 1024 / 1024 + " MB");
+
+        // 打印物理内存，单位为MB
+        System.out.println("Physical memory: " + memory.getTotal() / 1024 / 1024 + " MB");
+
+        // 打印页面大小，单位为字节
+        System.out.println("Page size: " + memory.getPageSize() + " bytes");
+
+    }
+
+
+    @Test
+    void diskStore() {
+        SystemInfo si = new SystemInfo();
+        HardwareAbstractionLayer hal = si.getHardware();
+    }
+
 }
