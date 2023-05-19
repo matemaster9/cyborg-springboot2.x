@@ -3,8 +3,6 @@ package org.mastercs.cyborg.test.common;
 import org.junit.jupiter.api.Test;
 import org.mastercs.cyborg.common.HardwareInfoSupplier;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class HardwareInfoSupplierTest {
 
     @Test
@@ -25,5 +23,10 @@ class HardwareInfoSupplierTest {
     @Test
     void getUsageMemoryInGB() {
         System.out.println(HardwareInfoSupplier.getUsageMemoryInGB());
+    }
+
+    @Test
+    void getBootTime() {
+        System.out.println(HardwareInfoSupplier.getBootTime());
     }
 }
