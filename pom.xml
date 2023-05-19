@@ -32,6 +32,7 @@
     </dependencyManagement>
 
     <dependencies>
+        <!--starter web test quartz-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -46,25 +47,32 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-quartz</artifactId>
         </dependency>
+        <!--starter -->
 
+        <!--lombok-->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
+        <!--lombok-->
 
-        <!-- https://mvnrepository.com/artifact/com.github.oshi/oshi-core -->
+        <!--oshi-->
         <dependency>
             <groupId>com.github.oshi</groupId>
             <artifactId>oshi-core</artifactId>
             <version>${oshi.version}</version>
         </dependency>
+        <!--oshi-->
 
+        <!--guava-->
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
             <version>${guava.version}</version>
         </dependency>
+        <!--guava-->
 
+        <!--apache commons collections4 lang3-->
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-collections4</artifactId>
@@ -76,6 +84,7 @@
             <artifactId>commons-lang3</artifactId>
             <version>${lang3.version}</version>
         </dependency>
+        <!--apache commons-->
 
     </dependencies>
 </project>
