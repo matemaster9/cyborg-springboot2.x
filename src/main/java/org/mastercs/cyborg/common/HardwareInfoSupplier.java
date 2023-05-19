@@ -22,7 +22,7 @@ public final class HardwareInfoSupplier {
 
     private static final SystemInfo SYSTEM_INFO = new SystemInfo();
 
-    private static final int BYTE_TO_GB = 1024 * 1024;
+    private static final int BYTE_TO_GB = 1024 * 1024 * 1024;
 
     public static LocalDateTime getBootTime() {
         long systemBootTime = SYSTEM_INFO.getOperatingSystem().getSystemBootTime();
