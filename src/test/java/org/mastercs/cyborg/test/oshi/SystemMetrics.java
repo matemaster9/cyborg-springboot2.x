@@ -21,7 +21,9 @@ public class SystemMetrics {
         CentralProcessor processor = hal.getProcessor();
         double cpuLoad = processor.getSystemCpuLoadBetweenTicks(processor.getSystemCpuLoadTicks());
         int cpuUsagePercent = (int) (cpuLoad * 100);
+        int physicalProcessorCount = processor.getPhysicalProcessorCount();
         System.out.println("CPU使用率: " + cpuUsagePercent+ "%");
+        System.out.println("CPU核数: " + physicalProcessorCount);
 
         // 获取并打印内存使用率
         GlobalMemory memory = hal.getMemory();
